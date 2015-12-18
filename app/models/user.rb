@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include ActiveModel::SecurePassword
+  has_many :recipes
 
   field :username, type: String
   field :password_digest, type: String

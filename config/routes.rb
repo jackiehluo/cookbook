@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :recipes
   resources :users
 
-  root 'recipes#index'
+  root 'recipes#home'
 
   get 'session/create'
   get 'session/destroy'
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'login' => 'session#new'
   post 'login' => 'session#create'
   get 'logout' => 'session#destroy'
+
+  get 'my-recipes' => 'recipes#index'
+  get 'new-recipe' => 'recipes#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

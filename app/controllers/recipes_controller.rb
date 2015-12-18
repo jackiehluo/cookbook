@@ -1,10 +1,14 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
+  def home
+    render :home
+  end
+
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = @current_user.recipes
   end
 
   # GET /recipes/1
@@ -25,6 +29,7 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @current_user.recipes << @recipe
 
     respond_to do |format|
       if @recipe.save

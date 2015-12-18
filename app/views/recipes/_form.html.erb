@@ -1,3 +1,4 @@
+<div class="text-center">
 <%= form_for(@recipe) do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -21,9 +22,10 @@
   </div>
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+   <%= f.select :category, [['Drinks','Drinks'],['Appetizers','Appetizers'],['Entrees','Entrees'],['Desserts','Desserts'],['Snacks','Snacks']] %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "btn btn-success" %>
   </div>
 <% end %>
+</div>

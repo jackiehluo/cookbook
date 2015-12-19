@@ -135,3 +135,14 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        connect_timeout: 15
+        skip_version_check: true
+        safe: true
+  options:
+    raise_not_found_error: false

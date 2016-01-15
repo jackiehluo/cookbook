@@ -4,17 +4,22 @@
 
 <%= form_for :session, :url => login_path, :method => :post do |f| %>
 
-<div class="field">
-  <%= f.label :username %><br>
-  <%= f.text_field :username %>
-</div>
-<div class="field">
-  <%= f.label :password, "Password" %><br>
-  <%= f.password_field :password %>
-</div>
-
-<div class="actions">
-  <%= f.submit "Log In", :class => "btn btn-primary" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <%= f.label :username %><br>
+      <%= f.text_field :username, {class: "form-control"} %>
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <%= f.label :password, "Password" %><br>
+      <%= f.password_field :password, {class: "form-control"} %>
+    </div>
+  </div><br>
+  <div class="actions">
+    <%= f.submit "Log In", :class => "btn btn-primary" %>
+  </div>
 </div>
 
 <% end %>

@@ -12,20 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-   <%= f.select :category, [['Drinks','Drinks'],['Appetizers','Appetizers'],['Entrees','Entrees'],['Desserts','Desserts'],['Snacks','Snacks']] %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, {class: "form-control"} %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <%= f.label :url, "URL" %><br>
+        <%= f.text_field :url, {class: "form-control"} %>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <%= f.label :category %><br>
+       <%= f.select :category, [['Drinks','Drinks'],['Appetizers','Appetizers'],['Entrees','Entrees'],['Desserts','Desserts'],['Snacks','Snacks']], {}, {class: "form-control"} %>
+      </div>
+    </div><br>
+    <div class="actions">
+      <%= f.submit "Submit", :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
 </div>
